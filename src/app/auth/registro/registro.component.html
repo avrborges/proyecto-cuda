@@ -1,1 +1,22 @@
-<p>registro works!</p>
+<div class="container">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Registro</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Email</label>
+                        <input type="password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" >Registro</button>
+                    <hr>
+                    <p>Si ya posee una cuenta registrada, acceda a <a [routerLink]="['/login']">Login</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

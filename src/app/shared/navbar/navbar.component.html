@@ -1,1 +1,19 @@
-<p>navbar works!</p>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a href="#" class="navbar-brand">
+        <img src="#" height="28" alt="CoolBrand">
+    </a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a [routerLink]="['/']" class="nav-item nav-link active">Home</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <a [routerLink]="['/login']" class="nav-item nav-link">Login</a>
+            <a href="#" class="nav-item nav-link">Logout</a>
+            <a [routerLink]="['/registro']" class="nav-item nav-link">Registro</a>
+        </div>
+    </div>
+</nav>
