@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "proyecto-cuda": {
+      "hosting": {
+        "proyecto-cuda": [
+          "proyecto-cuda"
+        ]
+      }
+    }
+  }
+}
