@@ -3,16 +3,16 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="text-center">Registro</h1>
-                <form>
+                <form [formGroup]="formRegistro" (ngSubmit)="onSubmit()">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" formControlName="email">
                     </div>
                     <div class="form-group">
                         <label for="password">Email</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" formControlName="password">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" >Registro</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!formRegistro.valid" >Registro</button>
                     <hr>
                     <p>Si ya posee una cuenta registrada, acceda a <a [routerLink]="['/login']">Login</a></p>
                 </form>
