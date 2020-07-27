@@ -3,18 +3,19 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="text-center">Login</h1>
-                <form>
+                <form [formGroup]="formLogin" (ngSubmit)="onLogin()">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control">
+                        <input type="email" class="form-control" formControlName="email">
                     </div>
                     <div class="form-group">
-                        <label for="password">Email</label>
-                        <input type="password" class="form-control">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" formControlName="password">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" >Login</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!formLogin.valid" >Login</button>
                     <hr>
-                    <p>Para crear una nueva cuenta, acceda a <a [routerLink]="['/registro']">Registro</a></p>
+                    <p class="text-center">Para crear una nueva cuenta, acceda a <a [routerLink]="['/registro']">Registro</a></p>
+                    <p class="text-center"><a routerLink="/forgot-password">Reestablecer contraseña</a></p>
                 </form>
             </div>
         </div>

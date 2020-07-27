@@ -7,13 +7,19 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav">
+        <div class="navbar-nav" *ngIf="user$ | async as user">
             <a [routerLink]="['/']" class="nav-item nav-link active">Home</a>
         </div>
-        <div class="navbar-nav ml-auto">
-            <a [routerLink]="['/login']" class="nav-item nav-link">Login</a>
-            <a href="#" class="nav-item nav-link">Logout</a>
-            <a [routerLink]="['/registro']" class="nav-item nav-link">Registro</a>
+        <div class="navbar-nav ml-auto" *ngIf="user$ | async as user; else login">
+            <a href="/login" class="nav-item nav-link" (click)="onLogout()">Logout</a>
+            <a class="nav-item nav-link">{{user?.email}}</a>
         </div>
+
+        <ng-template #login>
+            <div class="navbar-nav ml-auto">
+                <a href="#" routerLink="/login" class="nav-item nav-link" >Login</a>
+                <a href="#" routerLink="/registro" class="nav-item nav-link" >Registro</a>
+            </div>
+        </ng-template>
     </div>
 </nav>

@@ -1,2 +1,58 @@
 // ------ Instalación de Bootstrap --------- //
 
+sudo npm i bootstrap jquery @popperjs/core
+
+// ------ Configuración de Bootstrap (angular.json) --------- //
+
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
+
+// ------ Configuración de Firebase (enviroment.ts) --------- //
+
+export const environment = {
+  production: false,
+
+  firebaseConfig : {
+    apiKey: "AIzaSyBQouvVzkEpTU5gzYQYAO956Q3W8PB0MUY",
+    authDomain: "proyecto-cuda.firebaseapp.com",
+    databaseURL: "https://proyecto-cuda.firebaseio.com",
+    projectId: "proyecto-cuda",
+    storageBucket: "proyecto-cuda.appspot.com",
+    messagingSenderId: "55677513708",
+    appId: "1:55677513708:web:c2d29c0e30999356331ac9",
+    measurementId: "G-9T3YJ9T331"
+  }
+};
+
+// ------ Instalación de @angular/fire de Firebase --------- //
+
+ng app @angular/fire
+
+npm i firebase
+
+// ------ Creacion de componentes por módulos --------- //
+
+ng g m home -m=app --route home 
+
+// ------ Inicialización de conexion con Firebase ----- //
+
+// app.module.ts //
+
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth'; 
+import { environment } from './../environments/environment';
+...
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
+  ],

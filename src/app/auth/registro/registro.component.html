@@ -3,13 +3,13 @@
         <div class="card">
             <div class="card-body">
                 <h1 class="text-center">Registro</h1>
-                <form [formGroup]="formRegistro" (ngSubmit)="onSubmit()">
+                <form [formGroup]="formRegistro" (ngSubmit)="onRegistro()">
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" formControlName="email">
                     </div>
                     <div class="form-group">
-                        <label for="password">Email</label>
+                        <label for="password">Password</label>
                         <input type="password" class="form-control" formControlName="password">
                     </div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!formRegistro.valid" >Registro</button>

@@ -5,15 +5,27 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth'; 
+import { environment } from './../environments/environment';
+
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { SendEmailComponent } from './auth/send-email/send-email.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
+    SendEmailComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
